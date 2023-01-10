@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test PDf</title>
+    <style>
+        .back{
+            background-color: 'red';
+        }
+    </style>
+</head>
+<body>
+    {{customer}}
+    <hr>
+    {{customer.description|linebreaks}}
+    <br>
+    {{customer.logo}}
+    <br>
+    {{customer.logo.url}}
+    <br>
+    {{customer.logo.path}}
+    <br>
+    {% static 'download.png' %}
+
+    <div class="back">
+        <img src="{{customer.logo.path}}" height="200px">
+        <!-- <img src="media/{{customer.logo}}" height="200px"> -->
+        <img src="static/download.png" height="200px">
+    </div>
+
+</body>
+</html>
